@@ -253,7 +253,14 @@ public class GuiAtendente extends javax.swing.JFrame {
             txtNome.setText(atendente.get(numAt).getNome());
             txtEndereco.setText(atendente.get(numAt).getEndereco());
             txtTelefone.setText(atendente.get(numAt).getTelefone());
-            // Descobrir como q escolhe os botão de turno
+            Enumeration<AbstractButton> btnList = btnGroupTurno.getElements();
+            while(btnList.hasMoreElements()) {
+                AbstractButton btn = btnList.nextElement();
+                if(btn.getText().equals(atendente.get(numAt).getTurno())) {
+                    btn.setSelected(true);
+                }
+            }
+            
             btnConsultar.setEnabled(false);
             btnInserir.setEnabled(false);
             btnAlterar.setEnabled(true);
@@ -292,7 +299,13 @@ public class GuiAtendente extends javax.swing.JFrame {
         Atendente at = new Atendente(txtRegFunc.getText(), txtNome.getText());
         at.setEndereco(txtEndereco.getText());
         at.setTelefone(txtTelefone.getText());
-        // Descobrir como ler qual botão foi clickado e bota no turno
+        Enumeration<AbstractButton> btnList = btnGroupTurno.getElements();
+        while(btnList.hasMoreElements()) {
+            AbstractButton btn = btnList.nextElement();
+            if(btn.isSelected()) {
+                at.setTurno(btn.getText());
+            }
+        }
         
         atendente.add(at);
         
@@ -320,7 +333,13 @@ public class GuiAtendente extends javax.swing.JFrame {
         
         at.setEndereco(txtEndereco.getText());
         at.setTelefone(txtEndereco.getText());
-        // Descobrir como ler qual botão foi clickado e bota no turno
+        Enumeration<AbstractButton> btnList = btnGroupTurno.getElements();
+        while(btnList.hasMoreElements()) {
+            AbstractButton btn = btnList.nextElement();
+            if(btn.isSelected()) {
+                at.setTurno(btn.getText());
+            }
+        }
         
         txtRegFunc.setText(null);
         txtNome.setText(null);
