@@ -6,10 +6,6 @@ package fatec.poo.view;
 
 import fatec.poo.model.Atendente;
 import java.util.ArrayList;
-import java.util.Enumeration;
-import javax.swing.AbstractButton;
-import javax.swing.JOptionPane;
-import javax.swing.JRadioButton;
 
 /**
  *
@@ -37,16 +33,11 @@ public class GuiAtendente extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        btnGroupTurno = new javax.swing.ButtonGroup();
-        DialTeste = new javax.swing.JDialog();
+        btngrTurno = new javax.swing.ButtonGroup();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        btnTurnoManha = new javax.swing.JRadioButton();
-        btnTurnoTarde = new javax.swing.JRadioButton();
-        btnTurnoNoite = new javax.swing.JRadioButton();
         txtRegFunc = new javax.swing.JTextField();
         txtNome = new javax.swing.JTextField();
         txtEndereco = new javax.swing.JTextField();
@@ -56,18 +47,10 @@ public class GuiAtendente extends javax.swing.JFrame {
         btnAlterar = new javax.swing.JButton();
         btnExcluir = new javax.swing.JButton();
         btnSair = new javax.swing.JButton();
-        btnTesteTurno = new javax.swing.JButton();
-
-        javax.swing.GroupLayout DialTesteLayout = new javax.swing.GroupLayout(DialTeste.getContentPane());
-        DialTeste.getContentPane().setLayout(DialTesteLayout);
-        DialTesteLayout.setHorizontalGroup(
-            DialTesteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        DialTesteLayout.setVerticalGroup(
-            DialTesteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
+        jPanel1 = new javax.swing.JPanel();
+        rdbTurnoManha = new javax.swing.JRadioButton();
+        rdbTurnoTarde = new javax.swing.JRadioButton();
+        rdbTurnoNoite = new javax.swing.JRadioButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Cadastro Atendente");
@@ -79,20 +62,6 @@ public class GuiAtendente extends javax.swing.JFrame {
         jLabel3.setText("Endereço");
 
         jLabel4.setText("Telefone");
-
-        jLabel5.setText("Turno");
-
-        btnGroupTurno.add(btnTurnoManha);
-        btnTurnoManha.setText("Manhã");
-        btnTurnoManha.setEnabled(false);
-
-        btnGroupTurno.add(btnTurnoTarde);
-        btnTurnoTarde.setText("Tarde");
-        btnTurnoTarde.setEnabled(false);
-
-        btnGroupTurno.add(btnTurnoNoite);
-        btnTurnoNoite.setText("Noite");
-        btnTurnoNoite.setEnabled(false);
 
         txtNome.setEnabled(false);
 
@@ -143,12 +112,43 @@ public class GuiAtendente extends javax.swing.JFrame {
             }
         });
 
-        btnTesteTurno.setText("Teste Turno");
-        btnTesteTurno.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnTesteTurnoActionPerformed(evt);
-            }
-        });
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Turno"));
+
+        btngrTurno.add(rdbTurnoManha);
+        rdbTurnoManha.setText("Manhã");
+        rdbTurnoManha.setEnabled(false);
+
+        btngrTurno.add(rdbTurnoTarde);
+        rdbTurnoTarde.setText("Tarde");
+        rdbTurnoTarde.setEnabled(false);
+
+        btngrTurno.add(rdbTurnoNoite);
+        rdbTurnoNoite.setText("Noite");
+        rdbTurnoNoite.setEnabled(false);
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(rdbTurnoManha)
+                .addGap(18, 18, 18)
+                .addComponent(rdbTurnoTarde)
+                .addGap(18, 18, 18)
+                .addComponent(rdbTurnoNoite)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(rdbTurnoManha)
+                    .addComponent(rdbTurnoTarde)
+                    .addComponent(rdbTurnoNoite))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -156,45 +156,39 @@ public class GuiAtendente extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(20, 20, 20)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(btnConsultar)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnInserir)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnAlterar)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnExcluir)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnSair))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(btnConsultar)
-                                .addGap(18, 18, 18)
-                                .addComponent(btnInserir)
-                                .addGap(18, 18, 18)
-                                .addComponent(btnAlterar)
-                                .addGap(18, 18, 18)
-                                .addComponent(btnExcluir)
-                                .addGap(18, 18, 18)
-                                .addComponent(btnSair))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel1)
-                                    .addComponent(jLabel2)
-                                    .addComponent(jLabel3)
-                                    .addComponent(jLabel4))
-                                .addGap(18, 18, 18)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(txtNome)
-                                    .addComponent(txtEndereco)
-                                    .addComponent(txtTelefone, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE)
-                                    .addComponent(txtRegFunc, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addGap(20, 20, 20))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel5)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(btnTurnoManha)
-                                .addGap(18, 18, 18)
-                                .addComponent(btnTurnoTarde)
-                                .addGap(18, 18, 18)
-                                .addComponent(btnTurnoNoite)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnTesteTurno)
-                        .addGap(88, 88, 88))))
+                            .addComponent(jLabel1)
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel4))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txtNome)
+                            .addComponent(txtEndereco)
+                            .addComponent(txtTelefone, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE)
+                            .addComponent(txtRegFunc, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(20, 20, 20))
         );
+
+        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btnAlterar, btnConsultar, btnExcluir, btnInserir, btnSair});
+
+        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {txtEndereco, txtNome, txtTelefone});
+
+        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {jLabel1, jLabel2, jLabel3, jLabel4});
+
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
@@ -202,40 +196,31 @@ public class GuiAtendente extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(txtRegFunc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel2)
-                            .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel3)
-                            .addComponent(txtEndereco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel4)
-                            .addComponent(txtTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel5)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(btnTurnoManha)
-                            .addComponent(btnTurnoTarde)
-                            .addComponent(btnTurnoNoite))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(btnConsultar)
-                            .addComponent(btnInserir)
-                            .addComponent(btnAlterar)
-                            .addComponent(btnExcluir)
-                            .addComponent(btnSair))
-                        .addGap(20, 20, 20))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnTesteTurno)
-                        .addGap(92, 92, 92))))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(txtEndereco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
+                    .addComponent(txtTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnConsultar)
+                    .addComponent(btnInserir)
+                    .addComponent(btnAlterar)
+                    .addComponent(btnExcluir)
+                    .addComponent(btnSair))
+                .addGap(20, 20, 20))
         );
+
+        layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {txtEndereco, txtNome, txtRegFunc, txtTelefone});
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -253,12 +238,13 @@ public class GuiAtendente extends javax.swing.JFrame {
             txtNome.setText(atendente.get(numAt).getNome());
             txtEndereco.setText(atendente.get(numAt).getEndereco());
             txtTelefone.setText(atendente.get(numAt).getTelefone());
-            Enumeration<AbstractButton> btnList = btnGroupTurno.getElements();
-            while(btnList.hasMoreElements()) {
-                AbstractButton btn = btnList.nextElement();
-                if(btn.getText().equals(atendente.get(numAt).getTurno())) {
-                    btn.setSelected(true);
-                }
+            
+            if (rdbTurnoManha.getText().equals(atendente.get(numAt).getTurno())) {
+                rdbTurnoManha.setSelected(true);
+            }else if (rdbTurnoTarde.getText().equals(atendente.get(numAt).getTurno())) {
+                rdbTurnoTarde.setSelected(true);
+            }else {
+                rdbTurnoNoite.setSelected(true);
             }
             
             btnConsultar.setEnabled(false);
@@ -269,9 +255,9 @@ public class GuiAtendente extends javax.swing.JFrame {
             txtNome.setEnabled(false);
             txtEndereco.setEnabled(true);
             txtTelefone.setEnabled(true);
-            btnTurnoManha.setEnabled(true);
-            btnTurnoTarde.setEnabled(true);
-            btnTurnoNoite.setEnabled(true);
+            rdbTurnoManha.setEnabled(true);
+            rdbTurnoTarde.setEnabled(true);
+            rdbTurnoNoite.setEnabled(true);
             txtEndereco.requestFocus();
         }
         else {
@@ -284,9 +270,9 @@ public class GuiAtendente extends javax.swing.JFrame {
             txtNome.setEnabled(true);
             txtEndereco.setEnabled(true);
             txtTelefone.setEnabled(true);
-            btnTurnoManha.setEnabled(true);
-            btnTurnoTarde.setEnabled(true);
-            btnTurnoNoite.setEnabled(true);
+            rdbTurnoManha.setEnabled(true);
+            rdbTurnoTarde.setEnabled(true);
+            rdbTurnoNoite.setEnabled(true);
             txtNome.requestFocus();
         }
     }//GEN-LAST:event_btnConsultarActionPerformed
@@ -299,12 +285,13 @@ public class GuiAtendente extends javax.swing.JFrame {
         Atendente at = new Atendente(txtRegFunc.getText(), txtNome.getText());
         at.setEndereco(txtEndereco.getText());
         at.setTelefone(txtTelefone.getText());
-        Enumeration<AbstractButton> btnList = btnGroupTurno.getElements();
-        while(btnList.hasMoreElements()) {
-            AbstractButton btn = btnList.nextElement();
-            if(btn.isSelected()) {
-                at.setTurno(btn.getText());
-            }
+        
+        if (rdbTurnoManha.isSelected()) {
+            at.setTurno(rdbTurnoManha.getText());
+        }else if (rdbTurnoTarde.isSelected()) {
+            at.setTurno(rdbTurnoTarde.getText());
+        }else {
+            at.setTurno(rdbTurnoNoite.getText());
         }
         
         atendente.add(at);
@@ -313,7 +300,7 @@ public class GuiAtendente extends javax.swing.JFrame {
         txtNome.setText(null);
         txtEndereco.setText(null);
         txtTelefone.setText(null);
-        btnGroupTurno.clearSelection();
+        btngrTurno.clearSelection();
         btnConsultar.setEnabled(true);
         btnInserir.setEnabled(false);
         btnAlterar.setEnabled(false);
@@ -322,9 +309,9 @@ public class GuiAtendente extends javax.swing.JFrame {
         txtNome.setEnabled(false);
         txtEndereco.setEnabled(false);
         txtTelefone.setEnabled(false);
-        btnTurnoManha.setEnabled(false);
-        btnTurnoTarde.setEnabled(false);
-        btnTurnoNoite.setEnabled(false);
+        rdbTurnoManha.setEnabled(false);
+        rdbTurnoTarde.setEnabled(false);
+        rdbTurnoNoite.setEnabled(false);
         txtRegFunc.requestFocus();
     }//GEN-LAST:event_btnInserirActionPerformed
 
@@ -333,19 +320,20 @@ public class GuiAtendente extends javax.swing.JFrame {
         
         at.setEndereco(txtEndereco.getText());
         at.setTelefone(txtEndereco.getText());
-        Enumeration<AbstractButton> btnList = btnGroupTurno.getElements();
-        while(btnList.hasMoreElements()) {
-            AbstractButton btn = btnList.nextElement();
-            if(btn.isSelected()) {
-                at.setTurno(btn.getText());
-            }
+      
+        if (rdbTurnoManha.isSelected()) {
+            at.setTurno(rdbTurnoManha.getText());
+        }else if (rdbTurnoTarde.isSelected()) {
+            at.setTurno(rdbTurnoTarde.getText());
+        }else {
+            at.setTurno(rdbTurnoNoite.getText());
         }
         
         txtRegFunc.setText(null);
         txtNome.setText(null);
         txtEndereco.setText(null);
         txtTelefone.setText(null);
-        btnGroupTurno.clearSelection();
+        btngrTurno.clearSelection();
         btnConsultar.setEnabled(true);
         btnInserir.setEnabled(false);
         btnAlterar.setEnabled(false);
@@ -354,9 +342,9 @@ public class GuiAtendente extends javax.swing.JFrame {
         txtNome.setEnabled(false);
         txtEndereco.setEnabled(false);
         txtTelefone.setEnabled(false);
-        btnTurnoManha.setEnabled(false);
-        btnTurnoTarde.setEnabled(false);
-        btnTurnoNoite.setEnabled(false);
+        rdbTurnoManha.setEnabled(false);
+        rdbTurnoTarde.setEnabled(false);
+        rdbTurnoNoite.setEnabled(false);
         txtRegFunc.requestFocus();
     }//GEN-LAST:event_btnAlterarActionPerformed
 
@@ -367,7 +355,7 @@ public class GuiAtendente extends javax.swing.JFrame {
         txtNome.setText(null);
         txtEndereco.setText(null);
         txtTelefone.setText(null);
-        btnGroupTurno.clearSelection();
+        btngrTurno.clearSelection();
         btnConsultar.setEnabled(true);
         btnInserir.setEnabled(false);
         btnAlterar.setEnabled(false);
@@ -376,53 +364,27 @@ public class GuiAtendente extends javax.swing.JFrame {
         txtNome.setEnabled(false);
         txtEndereco.setEnabled(false);
         txtTelefone.setEnabled(false);
-        btnTurnoManha.setEnabled(false);
-        btnTurnoTarde.setEnabled(false);
-        btnTurnoNoite.setEnabled(false);
+        rdbTurnoManha.setEnabled(false);
+        rdbTurnoTarde.setEnabled(false);
+        rdbTurnoNoite.setEnabled(false);
         txtRegFunc.requestFocus();
     }//GEN-LAST:event_btnExcluirActionPerformed
 
-    private void btnTesteTurnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTesteTurnoActionPerformed
-        JRadioButton tmp;
-        
-        if (btnTurnoManha.isSelected()) {
-            tmp = btnTurnoManha;
-        }
-        else if (btnTurnoTarde.isSelected()) {
-            tmp = btnTurnoTarde;
-        }
-        else {
-            tmp = btnTurnoNoite;
-        }
-
-        // JOptionPane.showMessageDialog(null, tmp.getText(), "Teste", JOptionPane.INFORMATION_MESSAGE);
-        
-        Enumeration<AbstractButton> tmp2 = btnGroupTurno.getElements();
-        while(tmp2.hasMoreElements()) {
-            AbstractButton tmp3 = tmp2.nextElement();
-            if(tmp3.isSelected()) {
-                JOptionPane.showMessageDialog(null, tmp3.getText(), "Teste", JOptionPane.INFORMATION_MESSAGE);
-            }
-        }
-    }//GEN-LAST:event_btnTesteTurnoActionPerformed
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JDialog DialTeste;
     private javax.swing.JButton btnAlterar;
     private javax.swing.JButton btnConsultar;
     private javax.swing.JButton btnExcluir;
-    private javax.swing.ButtonGroup btnGroupTurno;
     private javax.swing.JButton btnInserir;
     private javax.swing.JButton btnSair;
-    private javax.swing.JButton btnTesteTurno;
-    private javax.swing.JRadioButton btnTurnoManha;
-    private javax.swing.JRadioButton btnTurnoNoite;
-    private javax.swing.JRadioButton btnTurnoTarde;
+    private javax.swing.ButtonGroup btngrTurno;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JRadioButton rdbTurnoManha;
+    private javax.swing.JRadioButton rdbTurnoNoite;
+    private javax.swing.JRadioButton rdbTurnoTarde;
     private javax.swing.JTextField txtEndereco;
     private javax.swing.JTextField txtNome;
     private javax.swing.JTextField txtRegFunc;

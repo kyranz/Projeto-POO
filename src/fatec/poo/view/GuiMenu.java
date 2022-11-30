@@ -115,7 +115,7 @@ public class GuiMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItemHospedeActionPerformed
 
     private void jMenuItemResLibActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemResLibActionPerformed
-        // TODO add your handling code here:
+        new GuiReservarLiberar(hotel, atendente, hospede).setVisible(true);
     }//GEN-LAST:event_jMenuItemResLibActionPerformed
 
     /**

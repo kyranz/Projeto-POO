@@ -25,7 +25,7 @@ public class QuartoHotel {
        
        atendente.addQuartoHotel(this);
        hospede.setQuartoHotel(this);
-     }
+    }
     
     public double liberar(int dias, double taxaDesc){
         this.situacao = false;
