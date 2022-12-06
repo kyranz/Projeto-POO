@@ -13,15 +13,16 @@ import java.util.ArrayList;
  */
 public class GuiAtendente extends javax.swing.JFrame {
 
-    private ArrayList<Atendente> atendente = new ArrayList<>();
+    private ArrayList<Atendente> atendente;
     private int numAt;
     
     /**
      * Creates new form GuiAtendente
+     * @param at
      */
-    public GuiAtendente(ArrayList<Atendente> at) {
+    public GuiAtendente(ArrayList<Atendente> atendente) {
         initComponents();
-        this.atendente = at;
+        this.atendente = atendente;
     }
 
     /**
@@ -47,7 +48,7 @@ public class GuiAtendente extends javax.swing.JFrame {
         btnAlterar = new javax.swing.JButton();
         btnExcluir = new javax.swing.JButton();
         btnSair = new javax.swing.JButton();
-        jPanel1 = new javax.swing.JPanel();
+        jPanelTurno = new javax.swing.JPanel();
         rdbTurnoManha = new javax.swing.JRadioButton();
         rdbTurnoTarde = new javax.swing.JRadioButton();
         rdbTurnoNoite = new javax.swing.JRadioButton();
@@ -112,7 +113,7 @@ public class GuiAtendente extends javax.swing.JFrame {
             }
         });
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Turno"));
+        jPanelTurno.setBorder(javax.swing.BorderFactory.createTitledBorder("Turno"));
 
         btngrTurno.add(rdbTurnoManha);
         rdbTurnoManha.setText("Manhã");
@@ -126,11 +127,11 @@ public class GuiAtendente extends javax.swing.JFrame {
         rdbTurnoNoite.setText("Noite");
         rdbTurnoNoite.setEnabled(false);
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        javax.swing.GroupLayout jPanelTurnoLayout = new javax.swing.GroupLayout(jPanelTurno);
+        jPanelTurno.setLayout(jPanelTurnoLayout);
+        jPanelTurnoLayout.setHorizontalGroup(
+            jPanelTurnoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelTurnoLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(rdbTurnoManha)
                 .addGap(18, 18, 18)
@@ -139,11 +140,11 @@ public class GuiAtendente extends javax.swing.JFrame {
                 .addComponent(rdbTurnoNoite)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        jPanelTurnoLayout.setVerticalGroup(
+            jPanelTurnoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelTurnoLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanelTurnoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(rdbTurnoManha)
                     .addComponent(rdbTurnoTarde)
                     .addComponent(rdbTurnoNoite))
@@ -179,7 +180,7 @@ public class GuiAtendente extends javax.swing.JFrame {
                             .addComponent(txtEndereco)
                             .addComponent(txtTelefone, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE)
                             .addComponent(txtRegFunc, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jPanelTurno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(20, 20, 20))
         );
 
@@ -209,7 +210,7 @@ public class GuiAtendente extends javax.swing.JFrame {
                     .addComponent(jLabel4)
                     .addComponent(txtTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanelTurno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnConsultar)
@@ -381,7 +382,7 @@ public class GuiAtendente extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanelTurno;
     private javax.swing.JRadioButton rdbTurnoManha;
     private javax.swing.JRadioButton rdbTurnoNoite;
     private javax.swing.JRadioButton rdbTurnoTarde;

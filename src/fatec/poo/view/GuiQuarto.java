@@ -13,7 +13,7 @@ import java.util.ArrayList;
  */
 public class GuiQuarto extends javax.swing.JFrame {
 
-    private ArrayList<QuartoHotel> quarto = new ArrayList<>();
+    private ArrayList<QuartoHotel> quarto;
     private int numQuarto;
     
     /**

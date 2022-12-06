@@ -18,11 +18,11 @@ public class GuiHospede extends javax.swing.JFrame {
     
     /**
      * Creates new form GuiHospede
-     * @param ho
+     * @param hospede
      */
-    public GuiHospede(ArrayList<Hospede> ho) {
+    public GuiHospede(ArrayList<Hospede> hospede) {
         initComponents();
-        hospede = ho;
+        this.hospede = hospede;
     }
 
     /**
@@ -44,7 +44,7 @@ public class GuiHospede extends javax.swing.JFrame {
         txtTelefone = new javax.swing.JTextField();
         txtTxDesconto = new javax.swing.JTextField();
         txtIdade = new javax.swing.JTextField();
-        txtCPF = new javax.swing.JTextField();
+        txtCpf = new javax.swing.JTextField();
         txtEndereco = new javax.swing.JTextField();
         btnConsultar = new javax.swing.JButton();
         btnInserir = new javax.swing.JButton();
@@ -149,7 +149,7 @@ public class GuiHospede extends javax.swing.JFrame {
                                 .addGap(18, 18, 18)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtCPF, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(txtCpf, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(0, 0, Short.MAX_VALUE)))
                         .addGap(18, 18, 18)
                         .addComponent(btnSair))
@@ -184,7 +184,7 @@ public class GuiHospede extends javax.swing.JFrame {
                 .addGap(16, 16, 16)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(txtCPF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtCpf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
@@ -193,7 +193,7 @@ public class GuiHospede extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(txtEndereco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(22, 22, 22)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
                     .addComponent(txtTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -231,7 +231,7 @@ public class GuiHospede extends javax.swing.JFrame {
     private void btnConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultarActionPerformed
         int i;
         for (i = 0; i < hospede.size(); i++) {
-            if (hospede.get(i).getCpf().equals(txtCPF.getText())) {
+            if (hospede.get(i).getCpf().equals(txtCpf.getText())) {
                 break;
             }
         }
@@ -248,7 +248,7 @@ public class GuiHospede extends javax.swing.JFrame {
             btnInserir.setEnabled(false);
             btnAlterar.setEnabled(true);
             btnExcluir.setEnabled(true);
-            txtCPF.setEnabled(false);
+            txtCpf.setEnabled(false);
             txtNome.setEnabled(false);
             txtEndereco.setEnabled(true);
             txtTelefone.setEnabled(true);
@@ -262,7 +262,7 @@ public class GuiHospede extends javax.swing.JFrame {
             btnInserir.setEnabled(true);
             btnAlterar.setEnabled(false);
             btnExcluir.setEnabled(false);
-            txtCPF.setEnabled(false);
+            txtCpf.setEnabled(false);
             txtNome.setEnabled(true);
             txtEndereco.setEnabled(true);
             txtTelefone.setEnabled(true);
@@ -273,14 +273,14 @@ public class GuiHospede extends javax.swing.JFrame {
     }//GEN-LAST:event_btnConsultarActionPerformed
 
     private void btnInserirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInserirActionPerformed
-        Hospede ho = new Hospede(txtCPF.getText(), txtNome.getText());
+        Hospede ho = new Hospede(txtCpf.getText(), txtNome.getText());
         ho.setEndereco(txtEndereco.getText());
         ho.setTelefone(txtTelefone.getText());
         ho.setTxDesconto(Double.parseDouble(txtTxDesconto.getText()));
         
         hospede.add(ho);
         
-        txtCPF.setText(null);
+        txtCpf.setText(null);
         txtNome.setText(null);
         txtEndereco.setText(null);
         txtTelefone.setText(null);
@@ -290,13 +290,13 @@ public class GuiHospede extends javax.swing.JFrame {
         btnInserir.setEnabled(false);
         btnAlterar.setEnabled(false);
         btnExcluir.setEnabled(false);
-        txtCPF.setEnabled(true);
+        txtCpf.setEnabled(true);
         txtNome.setEnabled(false);
         txtEndereco.setEnabled(false);
         txtTelefone.setEnabled(false);
         txtTxDesconto.setEnabled(false);
         txtIdade.setEnabled(false);
-        txtCPF.requestFocus();
+        txtCpf.requestFocus();
     }//GEN-LAST:event_btnInserirActionPerformed
 
     private void btnAlterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAlterarActionPerformed
@@ -305,7 +305,7 @@ public class GuiHospede extends javax.swing.JFrame {
         ho.setTelefone(txtTelefone.getText());
         ho.setTxDesconto(Double.parseDouble(txtTxDesconto.getText()));
         
-        txtCPF.setText(null);
+        txtCpf.setText(null);
         txtNome.setText(null);
         txtEndereco.setText(null);
         txtTelefone.setText(null);
@@ -315,19 +315,19 @@ public class GuiHospede extends javax.swing.JFrame {
         btnInserir.setEnabled(false);
         btnAlterar.setEnabled(false);
         btnExcluir.setEnabled(false);
-        txtCPF.setEnabled(true);
+        txtCpf.setEnabled(true);
         txtNome.setEnabled(false);
         txtEndereco.setEnabled(false);
         txtTelefone.setEnabled(false);
         txtTxDesconto.setEnabled(false);
         txtIdade.setEnabled(false);
-        txtCPF.requestFocus();
+        txtCpf.requestFocus();
     }//GEN-LAST:event_btnAlterarActionPerformed
 
     private void btnExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcluirActionPerformed
         hospede.remove(numHosp);
         
-        txtCPF.setText(null);
+        txtCpf.setText(null);
         txtNome.setText(null);
         txtEndereco.setText(null);
         txtTelefone.setText(null);
@@ -337,13 +337,13 @@ public class GuiHospede extends javax.swing.JFrame {
         btnInserir.setEnabled(false);
         btnAlterar.setEnabled(false);
         btnExcluir.setEnabled(false);
-        txtCPF.setEnabled(true);
+        txtCpf.setEnabled(true);
         txtNome.setEnabled(false);
         txtEndereco.setEnabled(false);
         txtTelefone.setEnabled(false);
         txtTxDesconto.setEnabled(false);
         txtIdade.setEnabled(false);
-        txtCPF.requestFocus();
+        txtCpf.requestFocus();
     }//GEN-LAST:event_btnExcluirActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -358,7 +358,7 @@ public class GuiHospede extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JTextField txtCPF;
+    private javax.swing.JTextField txtCpf;
     private javax.swing.JTextField txtEndereco;
     private javax.swing.JTextField txtIdade;
     private javax.swing.JTextField txtNome;
